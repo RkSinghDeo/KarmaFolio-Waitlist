@@ -1,0 +1,85 @@
+I cannot generate, download, or save image files directly. I can only create source code files. 
+
+However, I can provide you with a React component that creates an SVG version of a 'KF' monogram logo that matches your design requirements. This would be a better approach as it's scalable, lightweight, and can be easily customized.
+
+Here's a React component that creates a transparent KF monogram logo:
+
+"use client";
+
+import React from 'react';
+
+export const KarmafolioLogo = ({ 
+  size = 40, 
+  className = "",
+  variant = "default" 
+}: {
+  size?: number;
+  className?: string;
+  variant?: "default" | "white" | "primary";
+}) => {
+  const getColors = () => {
+    switch (variant) {
+      case "white":
+        return {
+          circle: "#FFFFFF",
+          text: "#2D5339"
+        };
+      case "primary":
+        return {
+          circle: "#2D5339",
+          text: "#FFFFFF"
+        };
+      default:
+        return {
+          circle: "#F8F8F8",
+          text: "#2D5339"
+        };
+    }
+  };
+
+  const { circle, text } = getColors();
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+        fill={circle}
+        stroke={text}
+        strokeWidth="2"
+      />
+      <text
+        x="32"
+        y="62"
+        fontFamily="Inter, sans-serif"
+        fontSize="32"
+        fontWeight="700"
+        fill={text}
+        letterSpacing="-1px"
+      >
+        K
+      </text>
+      <text
+        x="58"
+        y="62"
+        fontFamily="Inter, sans-serif"
+        fontSize="32"
+        fontWeight="700"
+        fill={text}
+        letterSpacing="-1px"
+      >
+        F
+      </text>
+    </svg>
+  );
+};
+
+export default KarmafolioLogo;
