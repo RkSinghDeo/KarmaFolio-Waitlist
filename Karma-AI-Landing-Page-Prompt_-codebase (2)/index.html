@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fosterra transforms how companies support foster care, creating lasting impact for children and families across the country.">
+    <meta name="keywords" content="foster care, corporate support, family services, child welfare">
+    <title>Fosterra - Transforming Foster Care Through Corporate Partnership</title>
+    <link rel="canonical" href="https://fosterra.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5339;
+            --accent: #FF7A5A;
+            --sage: #8FAB92;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --border: #E5E5E5;
+            --text: #1A1A1A;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 83, 57, 0.03) 0%, rgba(255, 122, 90, 0.03) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(143, 171, 146, 0.15) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 122, 90, 0.3);
+        }
+
+        .hero .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 122, 90, 0.4);
+        }
+
+        .impact-section {
+            background: var(--white);
+            position: relative;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .impact-card h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .pie-chart-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .pie-chart {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--primary) 0deg 144deg,
+                var(--accent) 144deg 216deg,
+                var(--sage) 216deg 360deg
+            );
+            position: relative;
+        }
+
+        .pie-chart::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .problem-section {
+            background: var(--gray);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 3rem;
+        }
+
+        .problem-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .problem-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -30px;
+            width: 2px;
+            height: 30px;
+            background: var(--sage);
+            transform: translateX(-50%);
+        }
+
+        .step:last-child .step-number::before {
+            display: none;
+        }
+
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .waitlist-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--sage) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waitlist-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 30s ease-in-out infinite;
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            background: var(--white);
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 122, 90, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 122, 90, 0.4);
+        }
+
+        .footer {
+            background: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section h3 {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-number::before {
+                display: none;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Partner with Foster Families,<br>Impact Foster Children</h1>
+                <p>At Fosterra, we believe every foster child deserves the stability, opportunity, and love provided by our dedicated foster families. We partner with mission-aligned companies to create the support system these families need to thrive.</p>
+                <a href="#waitlist" class="cta-button">Learn How Your Company Can Help</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section impact-section">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <h3>Redefining Support for Foster Families</h3>
+            <div class="impact-card">
+                <h2>20% Increase in Care Stability</h2>
+                <p>Companies partnering with Fosterra see measurable improvement in the stability and success rate of the foster families they support</p>
+                <div class="pie-chart-container">
+                    <div class="pie-chart"></div>
+                </div>
+                <p>Improved Family Retention</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <h2>The Challenge in Foster Care</h2>
+            <h3>Despite their good intentions, foster families face enormous challenges that threaten their ability to provide consistent care</h3>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <h3>High Turnover Rates</h3>
+                    <p>Too many compassionate families leave foster care due to burnout, financial pressure, and a lack of consistent support, leaving children without stable homes.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Lack of Corporate Engagement</h3>
+                    <p>Companies struggle to find meaningful, high-impact ways to support foster care initiatives that align with their values and business objectives.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Fragmented Support Systems</h3>
+                    <p>Existing support for foster families is often piecemeal, lacking the strategic, comprehensive backing needed for long-term stability and positive outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works">
+        <div class="container">
+            <h2>How Fosterra Works</h2>
+            <h3>A systematic approach to creating lasting impact for foster families</h3>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Strategic Alignment</h3>
+                    <p>We work with your company to align foster family support with your existing social impact initiatives, ensuring sustainable, mission-driven partnership.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Curated Family Matches</h3>
+                    <p>Our unique matching system identifies foster families whose values and needs align closely with your company's resources and support structure.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Ongoing Support & Impact</h3>
+                    <p>We handle the comprehensive support process, providing regular updates on the tangible impact of your partnership on specific families and children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="section waitlist-section" id="waitlist">
+        <div class="container">
+            <h2>Ready to Create Lasting Impact?</h2>
+            <p class="text-center mb-4">Join our waitlist for companies ready to transform foster care support</p>
+            <div class="waitlist-form">
+                <form id="waitlistForm" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+                    <div class="form-group">
+                        <label for="companyName">Company Name*</label>
+                        <input type="text" id="companyName" name="entry.123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Contact Name*</label>
+                        <input type="text" id="contactName" name="entry.987654321" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="entry.345678901" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Join the Waitlist</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Fosterra. All rights reserved.</p>
+            <p>Transforming foster care through meaningful partnerships.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally handle form submission
+            // For testing purposes, we'll show an alert and redirect
+            alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
+            
+            // Reset form
+            this.reset();
+            
+            // You can add actual form submission logic here for the Google Form
+            // Or use the browser's default submission with the form action
+            setTimeout(() => {
+                this.submit();
+            }, 100);
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
